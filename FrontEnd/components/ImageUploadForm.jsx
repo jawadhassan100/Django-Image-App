@@ -52,7 +52,7 @@ const toHome = () => {
               <img
                 src={image.image}
                 alt="Uploaded"
-                className="w-full h-full object-cover  rounded-lg mb-4 "
+                className="w-full h-auto object-cover  rounded-lg mb-4 "
                 
               />
               <button
