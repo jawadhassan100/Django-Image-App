@@ -16,7 +16,7 @@ const ImagePost = () => {
     formData.append('image', selectedImage);
 
     try {
-      const response = await axios.post('https://django-backend-blue.vercel.app/api/images/', formData, {
+      const response = await axios.post('http://localhost:3000/api/images/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

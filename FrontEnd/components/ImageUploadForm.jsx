@@ -11,7 +11,7 @@ const MyPost = () => {
   const router = useRouter()
   const deleteImage = async (id) => {
     try {
-        await axios.delete(`https://django-backend-blue.vercel.app/api/images/${id}/`)
+        await axios.delete(`http://localhost:3000/api/images//api/images/${id}/`)
         console.log(`image with id ${id} deleted`)
     } catch (error) {
         console.log(`image with id ${id} is not deleted`)
@@ -52,7 +52,7 @@ const toHome = () => {
               <img
                 src={image.image}
                 alt="Uploaded"
-                className="w-full h-auto object-cover  rounded-lg mb-4 "
+                className="w-full h-full object-cover  rounded-lg mb-4 "
                 
               />
               <button
