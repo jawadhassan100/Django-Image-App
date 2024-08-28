@@ -3,7 +3,6 @@
 import { useState ,useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 const MyPost = () => {
  
@@ -24,6 +23,7 @@ const toHome = () => {
 
   const deleteHandler = (id) =>{
     deleteImage(id)
+    window.location.reload()
   };
   
   const fetchData = async () => {
@@ -41,21 +41,22 @@ const toHome = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-blue-900 to-purple-900 min-h-screen ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center justify-center ">
+    <div className="bg-gray-400 h-full ">
+      <br /><br />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center mx-6 ">
           {data.map((image) => (
              <div
               key={image.id}
-              className="flex flex-col items-center bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg shadow p-4  mt-6"
+              className="flex flex-col h-[85%] w-fit items-center  bg-gray-200 rounded-lg shadow pt-4 px-4   mt-6"
             >
             <img
               src={image.image}
               alt="Uploaded"
-              className="w-full object-contain rounded-xl mb-4"
+              className="w-full object-contain h-[80%] rounded-md  mb-4"
             />
               <button
                 onClick={() => deleteHandler(image.id)}
-                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg "
+                className="bg-gray-400 font-semibold py-2 px-4 rounded-lg "
               >
                 Delete Image
               </button>
@@ -66,7 +67,7 @@ const toHome = () => {
          <div className="mt-2">
           <button
                 onClick={toHome}
-                className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg"
+                className="bg-blue-400 text-white py-2 px-4 rounded-lg absolute top-0 m-5"
               >
                 Back
               </button>
