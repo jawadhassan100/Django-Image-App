@@ -10,7 +10,7 @@ const MyPost = () => {
   const router = useRouter()
   const deleteImage = async (id) => {
     try {
-        await axios.delete(`http://127.0.0.1:8000/api/images/${id}/`)
+        await axios.delete(`https://django-backend-delta.vercel.app/api/images/${id}/`)
         console.log(`image with id ${id} deleted`)
     } catch (error) {
         console.log(`image with id ${id} is not deleted`)

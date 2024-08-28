@@ -57,12 +57,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ALLOWED_HOSTS = ['http://localhost:3000/', '127.0.0.1']
+ALLOWED_HOSTS = ['http://localhost:3000/']
 
 
-CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = (
+
+CORS_ALLOWED_ORIGINS = (
     'http://localhost:3000',
 )
 
